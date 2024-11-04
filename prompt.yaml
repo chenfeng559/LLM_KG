@@ -70,11 +70,11 @@ Output:
 {
   "intent": "单实体",
   "subject": { 
-    "entity_type": ""
+    "entity_type": "事件"
   },
   "attributes": [
     {
-      "attribute_name": "事件",
+      "attribute_name": "敌方活动起始时间",
       "attribute_value": "2024年4月2号" 
     }
   ]

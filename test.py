@@ -55,7 +55,7 @@ def process_questions(input_file, output_dir='outputs'):
 
 if __name__ == "__main__":
 
-    input_file = "question2.txt"  # 你的问题文件路径
+    input_file = "question.txt"  # 你的问题文件路径
 
     # 处理问题并获取输出文件路径
     output_file = process_questions(input_file)

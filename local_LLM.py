@@ -41,6 +41,7 @@ def query_military_llm(input_text, url='http://127.0.0.1:11434/api/chat', config
         # 构造请求数据
         data = {
             "model": "glm4_9b",
+            "options": {"temperature": 0.3},
             "messages": [
                 {"role": "system", "content": sys_prompt},
                 {"role": "user", "content": input_text}

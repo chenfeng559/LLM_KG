@@ -7,7 +7,7 @@ prompt:
 - 单实体多属性: 查询单个实体的多个属性
 - 多实体单属性: 查询多个实体的特定属性
 - 是非型: 判断某个属性是否属实
-- 数值对比型: 比较多个实体的某个数值属性
+- 数值比较型: 比较多个实体的某个数值属性
 - 计数型: 统计符合条件的实体数量
 - 最值型: 查找某个属性的最大或最小值
 - 事实约束型 ： 在某个条件下的实体的属性属性
@@ -52,18 +52,18 @@ prompt:
 示例输入输出对:
 ## Example1
 Input:
-美国尼米兹号舰船位黄海威慑事件中的我方机场是哪个？
+我国2024年4月2号发生了哪些事件？
 
 Output:
 {
-  "intent": "属性查询",
+  "intent": "单实体",
   "subject": { 
-    "entity_type": "我方设施"
+    "entity_type": ""
   },
   "attributes": [
     {
       "attribute_name": "事件",
-      "attribute_value": "美国尼米兹号舰船位黄海威慑事件" 
+      "attribute_value": "2024年4月2号" 
     }
   ]
 }
@@ -74,7 +74,7 @@ Input:
 
 Output:
 {
-  "intent": "是非查询",
+  "intent": "是非型",
   "subject": { 
     "entity_type": "事件"
   },
@@ -96,7 +96,7 @@ Input:
 
 Output:
 {
-  "intent": "统计查询",
+  "intent": "计数型",
   "subject": { 
     "entity_type": "事件"
   },
@@ -120,7 +120,7 @@ Input:
 
 Output:
 {
-  "intent": "属性查询",
+  "intent": "单实体多属性",
   "subject": { 
     "entity_type": ["敌方军种","敌方活动起始时间"]
   },
@@ -138,7 +138,7 @@ Input:
 
 Output:
 {
-  "intent": "数值比较",
+  "intent": "数值比较型",
   "subject": { 
     "entity_type": ["敌方军种","敌方活动起始时间"]
   },
@@ -186,5 +186,22 @@ Output:
   ]
 }
 
+## Example7
+Input:
+F35战机干扰事件涉及的敌方装备有哪些？
+
+Output:
+{
+  "intent": "单实体单属性",
+  "subject": { 
+    "entity_type": ["敌方装备"]
+  },
+  "attributes": [
+    {
+      "attribute_name": "事件",
+      "attribute_value": "F35战机干扰事件" 
+    }
+  ]
+}
 
 请严格按照示例格式解析用户输入的军事问题,输出规范的JSON格式。确保属性名必须从给定列表中选择。'
